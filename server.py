@@ -1,4 +1,4 @@
-import socket, keyboard, random
+import socket, keyboard
 
 def copyToClipboard():
     with open('text.txt', 'r') as f:
@@ -6,7 +6,7 @@ def copyToClipboard():
 
     keyboard.wait('CapsLock')
     for line in lines:
-        keyboard.write(line, delay=0.06)
+        keyboard.write(line, delay=0.04)
 
     with open('text.txt', 'w') as f:
         f.truncate(0)
@@ -21,7 +21,7 @@ except:
 print(ipv4_address)
 
 # bind over internet
-serversocket.bind((ipv4_address, 5809))
+serversocket.bind((ipv4_address, 5809)) #((ipv4_address, Port))
 serversocket.listen(5)
 c = 0
 while True:
